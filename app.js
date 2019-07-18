@@ -35,6 +35,7 @@ menu.simpleButton('List Checkers', 'listCheckers', {
             reply+= `${idx+1}. ${checker.name}\n`
         })
         ctx.replyWithMarkdown(reply)
+        return
     }
 })
 
@@ -51,25 +52,28 @@ menu.question('Create a new Checker', 'createCheckerMenu', {
         if(!newChecker) ctx.answerCbQuery("Invalid Format")
         
         db.addChecker(ctx, newChecker)
+        return
     }
 })
 
 // REMOVE
 menu.question('Remove Checker', 'notsohell', {
-    questionText: "Name of Checker to remove",
+    questionText: "Name/Index of Checker to remove",
     setFunc: (ctx, key) => {
         db.removeChecker(ctx, key)
+        return
     }
 })
 
 //  CHECK (MENU)
 menu.simpleButton('Check!', 'checkForUpdates', {
     doFunc: async ctx => {
-        console.log("checkuig .. ")
+        console.log("checking .. ")
         reply = await check(ctx)
         if(!reply) return
         ctx.reply("checking for updates... ")
         ctx.replyWithMarkdown(reply)
+        return
     }
 })
 

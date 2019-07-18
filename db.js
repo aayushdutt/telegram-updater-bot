@@ -48,6 +48,35 @@ db.addChecker = (ctx, checker) => {
 
 db.removeChecker = (ctx, name) => {
     userId = ctx.from.id;
+    if(!isNaN(name)) {
+        //if name is a number
+        index=parseInt(name)
+        ctx.reply("removing index: " + index);
+
+        try {
+            var currValue = db.get('users')
+                            .find({userId})
+                            .get('checkers')
+                            .value()
+
+            var newValue = currValue.filter((el, idx) => {
+                return idx+1 === index ? false : true;
+            })
+            
+            db.get('users')
+            .find({userId})
+            .assign({checkers: newValue})
+            .write()
+
+            ctx.reply("removed");
+            return
+        }
+
+        catch {
+            ctx.reply("Checker not found")
+            return
+        }
+    }
 
     try{
         ctx.reply("removing: " + name);
