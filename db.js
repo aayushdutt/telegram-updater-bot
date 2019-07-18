@@ -46,6 +46,25 @@ db.addChecker = (ctx, checker) => {
     ctx.reply("created!")
 }
 
+db.removeChecker = (ctx, name) => {
+    userId = ctx.from.id;
+
+    try{
+        ctx.reply("removing: " + name);
+
+        db.get('users')
+        .find({userId})
+        .get('checkers')
+        .remove({name: name})
+        .write()
+        
+        ctx.reply("removed: " + name);
+    }
+    catch {
+        ctx.reply("Checker not found");
+    }
+}
+
 // TODO: update and delete
 
 module.exports = db

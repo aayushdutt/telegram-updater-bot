@@ -54,9 +54,18 @@ menu.question('Create a new Checker', 'createCheckerMenu', {
     }
 })
 
+// REMOVE
+menu.question('Remove Checker', 'notsohell', {
+    questionText: "Name of Checker to remove",
+    setFunc: (ctx, key) => {
+        db.removeChecker(ctx, key)
+    }
+})
+
 //  CHECK (MENU)
 menu.simpleButton('Check!', 'checkForUpdates', {
     doFunc: async ctx => {
+        console.log("checkuig .. ")
         reply = await check(ctx)
         if(!reply) return
         ctx.reply("checking for updates... ")
