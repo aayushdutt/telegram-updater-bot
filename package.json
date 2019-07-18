@@ -13,6 +13,6 @@
   "dependencies": {
     "cheerio": "^1.0.0-rc.3",
     "request-promise": "^4.2.4",
-    "telebot": "^1.2.6"
+    "telegraf": "^3.30.1"
   }
 }
