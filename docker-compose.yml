@@ -1,12 +1,12 @@
 version: '2'
 services:
-  telegram-updater-bot:
+  telebot:
     image: 'aayushdutt/telegram-updator-bot'
     environment:
       - TELEGRAM_BOT_TOKEN=
     volumes:
-      - 'telegramDatabase:databases'
+      - 'telegramDatabase:/usr/src/app/databases'
 
 volumes:
-  telegram-updater-bot:
+  telegramDatabase:
     driver: local
