@@ -1,9 +1,12 @@
-version: '2.1'
-
+version: '2'
 services:
-  telegrambot:
-    image: telegrambot
-    build: .
+  telegram-updater-bot:
+    image: 'aayushdutt/telegram-updator-bot'
     environment:
-      NODE_ENV: production
-      TELEGRAM_BOT_TOKEN: 
+      - TELEGRAM_BOT_TOKEN=
+    volumes:
+      - 'telegramDatabase:databases'
+
+volumes:
+  telegram-updater-bot:
+    driver: local
