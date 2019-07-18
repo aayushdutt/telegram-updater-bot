@@ -6,5 +6,4 @@ services:
     build: .
     environment:
       NODE_ENV: production
-    ports:
-      - :
+      TELEGRAM_BOT_TOKEN: 
