@@ -57,8 +57,9 @@ menu.question('Create a new Checker', 'createCheckerMenu', {
 //  CHECK (MENU)
 menu.simpleButton('Check!', 'checkForUpdates', {
     doFunc: async ctx => {
+        reply = await check(ctx)
+        if(!reply) return
         ctx.reply("checking for updates... ")
-        reply = await check(ctx.from.id)
         ctx.replyWithMarkdown(reply)
     }
 })
@@ -77,16 +78,22 @@ bot.hears('hi', (ctx) => ctx.reply('Hey there'))
 
 bot.command('/check', async (ctx) => {
     logMsg(ctx)
+
+    reply = await check(ctx)
+    if(!reply) return
+
     ctx.reply("checking for updates... ")
-
-    reply = await check(ctx.from.id)
-
     ctx.replyWithMarkdown(reply)
+    
     logOutMsg(ctx, reply)
 })
 
-async function check(userId) {
-    var checkers = await db.getCheckers(userId)
+async function check(ctx) {
+    var checkers = await db.getCheckers(ctx.from.id)
+    if(checkers.length <1) {
+        ctx.reply("No Checkers Found")
+        return
+    }
     var promiseArray =  []
 
     checkers.forEach(checker => {
@@ -95,9 +102,9 @@ async function check(userId) {
     })
 
     const data = await Promise.all(promiseArray)
-    var reply = ""
+    var reply = "*Updates:* \n"
     data.forEach((el, idx) => {
-        reply += `${idx+1}. *${checkers[idx].name}:* ${el}`
+        reply += `${idx+1}. *${checkers[idx].name}:* ${el}\n`
     })
     return reply;
 }
