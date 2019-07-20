@@ -7,7 +7,6 @@
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
 [![Contributors][contributors-shield]][contributors-url]
-[![MIT License][license-shield]][license-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
 
@@ -19,15 +18,13 @@
     <img src="media/icon.svg" alt="Logo" width="150" height="150">
   </a>
 
-  <h3 align="center">Best-README-Template</h3>
+  <h3 align="center">HyperText Updater Bot</h3>
 
   <p align="center">
     A Telegram Bot which updates you about anything on the internet!
     <br />
-    <a href="https://github.com//aayushdutt/telegram-updater-bot"><strong>Explore the docs »</strong></a>
     <br />
-    <br />
-    <a href="https://github.com//aayushdutt/telegram-updater-bot">View Demo</a>
+    <a href="https://telegram.me/notilyBot">Use</a>
     ·
     <a href="https://github.com//aayushdutt/telegram-updater-bot/issues">Report Bug</a>
     ·
@@ -41,7 +38,7 @@
 ## Table of Contents
 
 * [About the Project](#about-the-project)
-  * [Built With](#built-with)
+* [Built With](#built-with)
 * [Usage](#usage)
 * [Contributing](#contributing)
 * [License](#license)
@@ -51,8 +48,9 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot](media/start-screenshot.jpg)](https://telegram.me/notilyBot)
-
+<p align="center">
+  <img width="30%" src="media/start-screenshot.jpg" >
+</p>
 
 
 ### Built With
@@ -68,12 +66,12 @@ Visit [https://github.com/aayushdutt/telegram-updater-bot](https://github.com/aa
 This is an example of how you may give instructions on setting up your project locally.
 To get a local copy up and running follow these simple example steps.
 
-### 1. Using Docker 
+### 1. With Docker 
 
 #### Prerequisites
 * Docker
 
-#### Usage
+#### Installation/Usage
 1. To get a API token, create a new bot at [https://telegram.me/BotFather](https://telegram.me/BotFather)
 2. Download the [docker-compose.yml](https://raw.githubusercontent.com/aayushdutt/telegram-updater-bot/master/docker-compose.yml) file locally.
 3. Enter your Bot Token from step 1 in `TELEGRAM_BOT_TOKEN=` in the `docker-compose.yml` file.
@@ -85,9 +83,9 @@ To get a local copy up and running follow these simple example steps.
 * Node.js
 * npm
 
-### Installation
+#### Installation/Usage
 
-1. Get a free API Key at [https://example.com](https://example.com)
+1. To get a API token, create a new bot at [https://telegram.me/BotFather](https://telegram.me/BotFather)
 2. Clone the repo
 ```sh
 git clone https:://github.com/your_username_/Project-Name.git
@@ -118,10 +116,6 @@ Contributions are what make the open source community such an amazing place to b
 5. Open a Pull Request
 
 
-<!-- LICENSE -->
-## License
-
-Distributed under the MIT License. See `LICENSE` for more information.
 
 <!-- CONTACT -->
 ## Contact
@@ -136,6 +130,5 @@ Project Link: [https://github.com/aayushdutt/telegram-updater-bot](https://githu
 [contributors-shield]: https://img.shields.io/badge/contributors-1-orange.svg?style=flat-square
 [contributors-url]: https://github.com/othneildrew/Best-README-Template/graphs/contributors
 [license-shield]: https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square
-[license-url]: https://choosealicense.com/licenses/mit
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/aayushdutt
