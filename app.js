@@ -95,7 +95,6 @@ bot.command('/check', async (ctx) => {
     reply = await check(ctx)
     if(!reply) return
 
-    ctx.reply("checking for updates... ")
     ctx.replyWithMarkdown(reply)
     
     logOutMsg(ctx, reply)
